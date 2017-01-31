@@ -189,6 +189,10 @@ module.exports = function (grunt) {
             }
         },
         watch: {
+            gruntFile:{
+                files: 'Gruntfile.js',
+                tasks: ['dev']
+            },
             js: {
                 files: projectJsFiles,
                 tasks: ['concat', 'jshint']
