@@ -3,18 +3,31 @@
   "version": "1.0.0",
   "description": "demo",
   "main": "app.js",
-  "author": "Thomas Juhász",
+  "author": "Bencsik Gergő",
   "license": "ISC",
   "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node backend/server.js"
   },
   "dependencies": {
-    "angular": "1.6.1",
-    "angular-ui-router": "^0.3.2"
+    "bower": "^1.8.0",
+    "grunt": "^1.0.1",
+    "grunt-cache-breaker": "^2.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-real-favicon": "^0.2.0",
+    "grunt-remove-logging": "^0.2.0"
   },
   "devDependencies": {
     "express": "^4.14.0",
-    "cors": "^2.8.1"
+    "cors": "^2.8.1",
+    "grunt-contrib-jshint": "^1.1.0"
   }
 }

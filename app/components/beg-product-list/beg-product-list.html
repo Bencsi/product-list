@@ -1,0 +1,14 @@
+<div>
+    <h2>Products</h2>
+    <input ng-model="vm.query" type="text"
+           placeholder="Filter products..." autofocus>
+    <label for="is_new">is new?</label>
+    <input name="is_new" id="is_new" type="checkbox" ng-model="vm.isNew" ng-true-value="true" ng-false-value="">
+    <ul>
+        <li ng-repeat="product in vm.products | filter:{name: vm.query, isNew: vm.isNew}">
+            <beg-product-list-item beg-data="product"></beg-product-list-item>
+        </li>
+    </ul>
+
+    <div class="clear"></div>
+</div>

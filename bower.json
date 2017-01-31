@@ -1,0 +1,21 @@
+{
+  "name": "angulardemo",
+  "description": "",
+  "authors": [
+    "Bencsik Gergő"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.1",
+    "angular-ui-router": "^0.3.2"
+  }
+}
