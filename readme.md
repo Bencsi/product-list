@@ -38,3 +38,9 @@ The server side returns an array of products:
 2. <http://localhost:8080/api/product?id=1>
 
 3. <http://localhost:8080/api/products>
+
+## Deploy to use
+```bash
+npm install
+grunt prod
+```
