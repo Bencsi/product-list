@@ -14,14 +14,16 @@ var vendorJsFiles = [ //Use only non minified versions here (because prod task d
 var projectJsFiles = [
     'app.js',
     'app/services/repository.js',
-    'app/pages/dashboard/dashboard.js',
+    'app/pages/home/home.js',
     'app/pages/product/product.js',
     'app/components/beg-product-list/beg-product-list.js',
-    'app/components/beg-product-list-item/beg-product-list-item.js'
+    'app/components/beg-product-list-item/beg-product-list-item.js',
+    'app/components/beg-rating/beg-rating.js'
 
 ];
 var vendorCssFiles = [ //Import vendor less files in your project less file(s)
-
+    'normalize.css/normalize.css',
+    'milligram/dist/milligram.css'
 ];
 var faviconBasePng = 'assets/images/square-logo.png'; // should be 260x260	or more for optimal results
 var faviconBackgroundColor = '#fff';

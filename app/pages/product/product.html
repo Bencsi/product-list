@@ -1,5 +1,23 @@
-<h1>{{vm.product.name}}</h1>
-<span>price: <strong>{{vm.product.price}}</strong></span>
-<span>rating: <strong>{{vm.product.rating}}</strong></span><br/>
-<img src="{{vm.product.offlineImage}}"><br/>
-<div>{{vm.product.description}}</div>
+<div class="row">
+    <div class="column">
+        <div class="row">
+            <div class="column">
+                <h1>{{vm.product.name}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column column-20">
+                <span class="price">{{vm.product.price|currency}}</span>
+                <div>
+                    <beg-rating beg-data="vm.product.rating" beg-max="5"></beg-rating>
+                </div>
+            </div>
+            <div class="column column-20">
+                <img src="{{vm.product.offlineImage}}">
+            </div>
+            <div class="column column-60">
+                {{vm.product.description}}
+            </div>
+        </div>
+    </div>
+</div>

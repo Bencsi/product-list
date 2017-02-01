@@ -1,7 +1,9 @@
-<div style="float: left">
+<div class="product-item">
     <h3>{{vm.begData.name}}</h3>
-    <span>price: <strong>{{vm.begData.price}}</strong></span>
-    <span>rating: <strong>{{vm.begData.rating}}</strong></span><br/>
+    <span class="price">{{vm.begData.price|currency}}</span>
+    <div>
+        <beg-rating beg-data="vm.begData.rating" beg-max="5"></beg-rating>
+    </div>
     <img src="{{vm.begData.offlineImage}}"><br/>
-    <a ui-sref="product({id: vm.begData.id})">View product</a>
+    <a class="button" ui-sref="product({id: vm.begData.id})">View product</a>
 </div>

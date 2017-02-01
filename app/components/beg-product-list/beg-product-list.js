@@ -9,7 +9,7 @@
             controllerAs: 'vm',
             bindings: {
                 begLimit: '<',
-                begOnSelect: '&?'
+                begWithFilter: '<'
             }
         });
 
@@ -19,7 +19,7 @@
 
         vm.$onInit = function () {
             repository.getProducts().then(function (response) {
-                vm.products = response.data;
+                vm.products = vm.begLimit ? response.data.slice(0, vm.begLimit) : response.data;
             });
         };
     }

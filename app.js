@@ -4,12 +4,12 @@
     angular.module('productListDemo', ['ui.router'])
 
         .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise("dashboard");
+            $urlRouterProvider.otherwise("home");
 
             $stateProvider
-                .state('dashboard', {
-                    url: "/dashboard",
-                    template: "<dashboard />"
+                .state('home', {
+                    url: "/home",
+                    template: "<home />"
                 })
                 .state('product', {
                     url: "/product/{id:int}",
