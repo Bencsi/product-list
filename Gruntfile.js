@@ -18,7 +18,9 @@ var projectJsFiles = [
     'app/pages/product/product.js',
     'app/components/beg-product-list/beg-product-list.js',
     'app/components/beg-product-list-item/beg-product-list-item.js',
-    'app/components/beg-rating/beg-rating.js'
+    'app/components/beg-rating/beg-rating.js',
+    'app/components/beg-product-list-filter-is-new/beg-product-list-filter-is-new.js',
+    'app/components/beg-product-list-filter-name/beg-product-list-filter-name.js'
 
 ];
 var vendorCssFiles = [ //Import vendor less files in your project less file(s)

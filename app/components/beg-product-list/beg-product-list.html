@@ -1,15 +1,12 @@
 <div>
     <h2>Products</h2>
-    <form ng-if="vm.begWithFilter">
+    <form>
         <fieldset>
-            <input ng-model="vm.query" type="text"
-                   placeholder="Filter products..." autofocus>
-            <input name="is_new" id="is_new" type="checkbox" ng-model="vm.isNew" ng-true-value="true" ng-false-value="">
-            <label for="is_new" class="label-inline">New</label>
+            <ng-transclude></ng-transclude>
         </fieldset>
     </form>
     <div class="row row-wrap" >
-        <div class="column column-25" ng-repeat="product in vm.products | filter:{name: vm.query, isNew: vm.isNew}">
+        <div class="column column-25" ng-repeat="product in vm.products | filter:vm.filterParams">
             <beg-product-list-item beg-data="product"></beg-product-list-item>
         </div>
     </div>
