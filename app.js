@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('productListDemo', ['ui.router'])
+    angular.module('productListDemo', ['ui.router','rzModule'])
 
         .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise("home");

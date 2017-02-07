@@ -9,7 +9,8 @@ var mainTemplatePath = 'index.html';
 var assetSourcePath = 'assets/';
 var vendorJsFiles = [ //Use only non minified versions here (because prod task do minify)
     'angular/angular.js',
-    'angular-ui-router/release/angular-ui-router.js'
+    'angular-ui-router/release/angular-ui-router.js',
+    'angularjs-slider/dist/rzslider.js'
 ];
 var projectJsFiles = [
     'app.js',
@@ -20,12 +21,14 @@ var projectJsFiles = [
     'app/components/beg-product-list-item/beg-product-list-item.js',
     'app/components/beg-rating/beg-rating.js',
     'app/components/beg-product-list-filter-is-new/beg-product-list-filter-is-new.js',
-    'app/components/beg-product-list-filter-name/beg-product-list-filter-name.js'
+    'app/components/beg-product-list-filter-name/beg-product-list-filter-name.js',
+    'app/components/beg-product-list-filter-price-range/beg-product-list-filter-price-range.js'
 
 ];
 var vendorCssFiles = [ //Import vendor less files in your project less file(s)
     'normalize.css/normalize.css',
-    'milligram/dist/milligram.css'
+    'milligram/dist/milligram.css',
+    'angularjs-slider/dist/rzslider.css'
 ];
 var faviconBasePng = 'assets/images/square-logo.png'; // should be 260x260	or more for optimal results
 var faviconBackgroundColor = '#fff';
