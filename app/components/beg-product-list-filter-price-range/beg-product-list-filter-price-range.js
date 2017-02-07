@@ -18,20 +18,8 @@
         var vm = this;
 
         vm.$onInit = function () {
-            vm.minPrice = vm.begProductList.products[0].price;
-            vm.maxPrice = vm.begProductList.products[0].price;
-            for (var i = 1; i < vm.begProductList.products.length; i++) {
-                vm.minPrice = vm.begProductList.products[i].price < vm.minPrice ? vm.begProductList.products[i].price : vm.minPrice;
-                vm.maxPrice = vm.begProductList.products[i].price > vm.maxPrice ? vm.begProductList.products[i].price : vm.maxPrice;
-            }
-            vm.slider = {
-                min: vm.minPrice,
-                max: vm.maxPrice,
-                options: {
-                    floor: vm.minPrice,
-                    ceil: vm.maxPrice
-                }
-            };
+            initPriceRanges();
+            initSlider();
         };
 
         vm.addFilterParam = function () {
@@ -40,6 +28,26 @@
 
         function makeFilterParam() {
             return {name: vm.begName};
+        }
+
+        function initPriceRanges() {
+            vm.minPrice = vm.begProductList.products[0].price;
+            vm.maxPrice = vm.begProductList.products[0].price;
+            for (var i = 1; i < vm.begProductList.products.length; i++) {
+                vm.minPrice = vm.begProductList.products[i].price < vm.minPrice ? vm.begProductList.products[i].price : vm.minPrice;
+                vm.maxPrice = vm.begProductList.products[i].price > vm.maxPrice ? vm.begProductList.products[i].price : vm.maxPrice;
+            }
+        }
+
+        function initSlider() {
+            vm.slider = {
+                min: vm.minPrice,
+                max: vm.maxPrice,
+                options: {
+                    floor: vm.minPrice,
+                    ceil: vm.maxPrice
+                }
+            };
         }
 
     }
