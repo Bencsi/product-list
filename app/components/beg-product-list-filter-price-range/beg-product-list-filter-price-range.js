@@ -18,16 +18,18 @@
         var vm = this;
 
         vm.$onInit = function () {
-            vm.begProductList.products.reduce(function(prev, curr) {
-                    vm.minPrice = prev.price < curr.price ? prev.price : curr.price;
-                    vm.maxPrice = prev.price > curr.price ? prev.price : curr.price;
-            });
+            vm.minPrice = vm.begProductList.products[0].price;
+            vm.maxPrice = vm.begProductList.products[0].price;
+            for (var i = 1; i < vm.begProductList.products.length; i++) {
+                vm.minPrice = vm.begProductList.products[i].price < vm.minPrice ? vm.begProductList.products[i].price : vm.minPrice;
+                vm.maxPrice = vm.begProductList.products[i].price > vm.maxPrice ? vm.begProductList.products[i].price : vm.maxPrice;
+            }
             vm.slider = {
                 min: vm.minPrice,
                 max: vm.maxPrice,
                 options: {
-                    floor: 0,
-                    ceil: 450
+                    floor: vm.minPrice,
+                    ceil: vm.maxPrice
                 }
             };
         };
