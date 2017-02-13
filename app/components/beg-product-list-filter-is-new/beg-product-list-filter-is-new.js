@@ -17,13 +17,17 @@
         /* jshint validthis: true */
         var vm = this;
 
-        vm.addFilterParam = function () {
-            vm.begProductList.addFilterParam(makeFilterParam());
+        vm.addRemoveFilterFunction = function () {
+            if (vm.begIsNew) {
+                vm.begProductList.addRemoveFilterFunction(filterFunc, true);
+            } else {
+                vm.begProductList.addRemoveFilterFunction(filterFunc);
+            }
+
         };
 
-        function makeFilterParam() {
-            return {isNew: vm.begIsNew};
-        }
-
+        var filterFunc = function isNewFunc(product) {
+            return product.isNew === vm.begIsNew;
+        };
     }
 })();

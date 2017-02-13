@@ -21,11 +21,33 @@
             repository.getProducts().then(function (response) {
                 vm.products = vm.begLimit ? response.data.slice(0, vm.begLimit) : response.data;
             });
-            vm.filterParams = {};
+            vm.filterFunctions = [];
         };
 
-        vm.addFilterParam = function (param) {
-            vm.filterParams = Object.assign(vm.filterParams, param);
+        vm.productFilter = function () {
+            return function (product) {
+                var showProduct = true;
+                for (var i = 0; i < vm.filterFunctions.length; i++) {
+                    showProduct *= vm.filterFunctions[i](product);
+                }
+
+                return showProduct;
+            };
+
+
+        };
+
+        vm.addRemoveFilterFunction = function (filterFunc, isAdding) {
+            if (isAdding) {
+                if (vm.filterFunctions.indexOf(filterFunc) === -1) {
+                    vm.filterFunctions.push(filterFunc);
+                }
+            } else {
+                var index = vm.filterFunctions.indexOf(filterFunc);
+                if (index !== -1) {
+                    vm.filterFunctions.splice(index, 1);
+                }
+            }
         };
     }
 })();

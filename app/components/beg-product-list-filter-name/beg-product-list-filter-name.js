@@ -17,13 +17,20 @@
         /* jshint validthis: true */
         var vm = this;
 
-        vm.addFilterParam = function () {
-            vm.begProductList.addFilterParam(makeFilterParam());
+        vm.addRemoveFilterFunction = function () {
+            console.log(vm.begProductList.filterFunctions);
+            if (vm.begName.length === 0) {
+                vm.begProductList.addRemoveFilterFunction(filterFunc);
+            } else {
+                vm.begProductList.addRemoveFilterFunction(filterFunc, true);
+            }
+
         };
 
-        function makeFilterParam() {
-            return {name: vm.begName};
-        }
-
+        var filterFunc = function nameFunc(product) {
+            if (product.name.toLowerCase().search(vm.begName.toLowerCase()) != -1) {
+                return true;
+            }
+        };
     }
 })();

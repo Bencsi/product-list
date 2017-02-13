@@ -6,7 +6,7 @@
         </fieldset>
     </form>
     <div class="row row-wrap" >
-        <div class="column column-25" ng-repeat="product in vm.products | filter:vm.filterParams">
+        <div class="column column-25" ng-repeat="product in vm.products | filter:vm.productFilter()">
             <beg-product-list-item beg-data="product"></beg-product-list-item>
         </div>
     </div>
