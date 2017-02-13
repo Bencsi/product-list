@@ -22,13 +22,13 @@
             initSlider();
         };
 
-        vm.addFilterParam = function () {
-            vm.begProductList.addFilterParam(makeFilterParam());
+        vm.addRemoveFilterFunction = function () {
+            vm.begProductList.addRemoveFilterFunction(filterFunc, true);
         };
 
-        function makeFilterParam() {
-            return {name: vm.begName};
-        }
+        var filterFunc = function priceRangeFunc(product) {
+            return product.price >= vm.begPriceRangeSlider.min && product.price <=vm.begPriceRangeSlider.max;
+        };
 
         function initPriceRanges() {
             vm.minPrice = vm.begProductList.products[0].price;
@@ -40,12 +40,15 @@
         }
 
         function initSlider() {
-            vm.slider = {
+            vm.begPriceRangeSlider = {
                 min: vm.minPrice,
                 max: vm.maxPrice,
                 options: {
                     floor: vm.minPrice,
-                    ceil: vm.maxPrice
+                    ceil: vm.maxPrice,
+                    onChange: function() {
+                        vm.addRemoveFilterFunction();
+                    }
                 }
             };
         }
