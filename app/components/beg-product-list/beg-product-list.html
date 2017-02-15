@@ -1,15 +1,22 @@
-<div>
-    <h2>Products</h2>
-    <form>
-        <fieldset>
-            <ng-transclude></ng-transclude>
-        </fieldset>
-    </form>
-    <div class="row row-wrap" >
-        <div class="column column-25" ng-repeat="product in vm.products | filter:vm.productFilter()">
-            <beg-product-list-item beg-data="product"></beg-product-list-item>
+<div class="row">
+    <div class="column column-25">
+        <form>
+            <fieldset>
+                <ng-transclude></ng-transclude>
+            </fieldset>
+        </form>
+    </div>
+    <div class="column column-75">
+        <div class="row">
+            <div class="column">
+                <h2>Products</h2>
+            </div>
+        </div>
+        <div class="row row-wrap">
+            <div class="column column-33" ng-repeat="product in vm.products | filter:vm.productFilter()">
+                <beg-product-list-item beg-data="product"></beg-product-list-item>
+            </div>
         </div>
     </div>
-
     <div class="clear"></div>
 </div>
