@@ -18,7 +18,6 @@
         var vm = this;
 
         vm.addRemoveFilterFunction = function () {
-            console.log(vm.begProductList.filterFunctions);
             if (vm.begName.length === 0) {
                 vm.begProductList.addRemoveFilterFunction(filterFunc);
             } else {
