@@ -1,0 +1,3 @@
+<div ng-repeat="category in vm.categories">
+    <label ng-click="vm.addRemoveFilterFunction()"><input ng-checked="true" ng-model="vm.selectedCategories[category]" type="checkbox"> {{category}}</label>
+</div>
